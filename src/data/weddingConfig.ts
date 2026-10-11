@@ -165,7 +165,7 @@ export const weddingConfig = {
   compliments: {
     heading: 'With the Best Compliments',
     names: [
-      'Dr. Shushil Kumar Saxena & Mrs. Manju Shree',
+      'Dr. Sushil Kumar Saxena & Mrs. Manju Shree',
       'Dr. Ajay Mathur & Late Mrs. Gunjan Mathur',
       'Dr. Vishwas Saxena & Dr. Alka Saxena',
       'Mr. Manoj Johri & Mrs. Chhaya Johri',
