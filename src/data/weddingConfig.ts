@@ -36,11 +36,11 @@ export const weddingConfig = {
   couple: {
     bride: 'Nishtha',
     groom: 'Pranshu',
-    /** Name order everywhere on the invite. This is the groom's-side invite, so Pranshu comes first. */
-    first: 'Pranshu',
-    second: 'Nishtha',
+    /** Name order everywhere on the invite. This is the bride's-side invite, so Nishtha comes first. */
+    first: 'Nishtha',
+    second: 'Pranshu',
     /** Initials used on the wax seal and favicon */
-    monogram: 'P & N',
+    monogram: 'N & P',
   },
 
   /** Main wedding moment — drives the countdown on the "We've picked the date" section */
@@ -63,18 +63,18 @@ export const weddingConfig = {
     cta: 'Open Your Invitation',
   },
 
-  /** Formal invitation (groom's side), word for word */
+  /** Formal invitation (bride's side), word for word. A line break in `opening` starts a new line. */
   formalInvitation: {
     invocation: 'Shri Ganeshaya Namah',
-    opening: 'Dear Family and Friends with the blessings of our elders',
+    opening: 'Dear Family and Friends,\nWith the blessings of our elders,',
     hostFamily: [
-      'Late Smt. Shanti Devi & Late Shri Baboo Ram Sharma',
-      'Late Smt. Shanti Devi & Late Shri Chandrabhan Sharma',
-      'Mr Harish Kumar Sharma & Mrs Renu Sharma',
+      'Smt. Shakuntla Saxena & Late Shri P.K. Saxena',
+      'Smt. Shobha Johri & Shri S.B. Johri',
+      'Mrs. Alpna Saxena & Mr. Sharad Kumar Saxena',
     ],
-    inviteLine: 'joyfully invite you to celebrate the union of their son',
-    otherParentsLine: 'beloved daughter of',
-    otherParents: 'Mr Sharad Kumar & Mrs Alpna',
+    inviteLine: 'joyfully invite you to celebrate the union of their daughter',
+    otherParentsLine: 'beloved son of',
+    otherParents: 'Mr. Harish Kumar Sharma & Mrs. Renu Sharma',
   },
 
   /** Events in the order they appear in the PDF */
@@ -134,7 +134,7 @@ export const weddingConfig = {
       startISO: '2026-12-12T10:00:00+05:30',
       venue: 'Justa Rasa, Rishikesh',
       mapsUrl: JUSTA_RASA_MAPS,
-      dressCode: 'Traditional',
+      dressCode: '',
     },
   ] as WeddingEvent[],
 
@@ -142,10 +142,9 @@ export const weddingConfig = {
   rsvp: {
     welcome: 'Dearest Family and Friends,',
     message:
-      'We are thrilled to have you with us to celebrate the wedding ceremony of our beloved son. Thank you for traveling near and far to be with us, your presence makes these precious moments even more memorable.',
+      'We are thrilled to have you with us to celebrate the wedding ceremony of our beloved daughter. Thank you for traveling near and far to be with us, your presence makes these precious moments even more memorable.',
     contacts: [
-      { name: 'Priya', phone: '+91 73874 24280' },
-      { name: 'Gaurav', phone: '+91 99990 40244' },
+      { name: 'Sarthak Saxena', phone: '+91 90134 91910' },
     ],
     /**
      * Optional online RSVP form (e.g. a Google Form linked to the Guest List sheet).
@@ -159,26 +158,29 @@ export const weddingConfig = {
       note: 'For any queries about the events, travel or stay, please contact our event manager.',
     },
     /** Pre-filled WhatsApp message ('' = open an empty chat) */
-    whatsappMessage: "Hi! We've received Pranshu & Nishtha's wedding invitation and would love to RSVP.",
+    whatsappMessage: "Hi! We've received Nishtha & Pranshu's wedding invitation and would love to RSVP.",
   },
 
-  /** "With best compliments" — RSVP card */
+  /** "With the Best Compliments" — last page */
   compliments: {
-    heading: 'With best compliments',
+    heading: 'With the Best Compliments',
     names: [
-      'Shri Prahlad Kumar Sharma & Sudha Sharma',
-      'Shri RP Sharma & Rekha Sharma',
-      'Shri Ramakant and Manju Sharma',
-      'Gopal ji & Geeta',
-      'Lalji & Lata',
+      'Dr. Shushil Kumar Saxena & Mrs. Manju Shree',
+      'Dr. Ajay Mathur & Late Mrs. Gunjan Mathur',
+      'Dr. Vishwas Saxena & Dr. Alka Saxena',
+      'Mr. Manoj Johri & Mrs. Chhaya Johri',
+      'Abhishek & Garima',
+      'Vivek & Ayushi',
+      'Ayush & Rajshree',
+      'Korak, Suhani, Avni',
     ],
   },
 
-  /** The little ones' note — RSVP card */
+  /** The little ones' note — last page ('' hides a line) */
   kidsNote: {
-    to: 'Dear Arya, Aditi, Nandu, Raja',
-    message: 'Mere mama ki shadi main Jalool Jalool Aana',
-    from: 'Akira (Manku)',
+    to: '',
+    message: 'Meri bua ki shaadi mein jalul jalul aana ❤️',
+    from: 'Gaura, Keshvi, Hiya & Mishti',
   },
 
   /** Travel & Stay section. Any item with an empty text is hidden. */
@@ -214,9 +216,9 @@ export const weddingConfig = {
 
   /** Link-preview text (WhatsApp, iMessage, etc.) */
   share: {
-    title: 'Pranshu & Nishtha · Wedding Invitation · 12 December 2026',
+    title: 'Nishtha & Pranshu · Wedding Invitation · 12 December 2026',
     description:
-      'You are invited to celebrate the wedding of Pranshu & Nishtha — 11th & 12th December 2026, Justa Rasa, Rishikesh.',
+      'You are invited to celebrate the wedding of Nishtha & Pranshu — 11th & 12th December 2026, Justa Rasa, Rishikesh.',
     themeColor: '#5e1f39',
   },
 };

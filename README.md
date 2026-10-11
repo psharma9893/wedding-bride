@@ -1,4 +1,4 @@
-# Pranshu & Nishtha: Wedding Invitation (groom's side)
+# Nishtha & Pranshu: Wedding Invitation (bride's side)
 
 A cinematic, mobile-first wedding invitation website, built from the invitation
 artwork (PDF pages 1–12 plus the RSVP card), in their original order.

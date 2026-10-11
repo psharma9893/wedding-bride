@@ -84,7 +84,7 @@ const mapsBtn = (url: string, label = 'Get directions'): string =>
     ? `<a class="btn btn--line" href="${esc(url)}" target="_blank" rel="noopener">${icon.pin}<span>${esc(label)}</span></a>`
     : '';
 
-const A = C.couple.first; // first name shown (Pranshu)
+const A = C.couple.first; // first name shown (Nishtha on the bride's side)
 const B = C.couple.second;
 const names = `${A} &amp; ${B}`;
 
@@ -292,7 +292,7 @@ function formalInvitation(): string {
   const body = `<div class="panel panel--stationery rich-tile">
     ${kolam('rich-tile__kolam reveal')}
     <p class="inv__invocation reveal">${esc(f.invocation)}</p>
-    <p class="inv__italic reveal">${esc(f.opening)}</p>
+    <p class="inv__italic reveal">${f.opening.split('\n').map(esc).join('<br>')}</p>
     <ul class="inv__family reveal">${f.hostFamily.map((n) => `<li>${n.split(' & ').map((part, i, all) => `<span class="nb">${esc(part)}${i < all.length - 1 ? ' &amp;' : ''}</span>`).join(' ')}</li>`).join('')}</ul>
     <p class="inv__italic reveal">${esc(f.inviteLine)}</p>
     <p class="inv__name script reveal">${esc(A)}</p>
@@ -454,7 +454,7 @@ function closing(): string {
       <h2 class="blessings-tile__title">${esc(C.compliments.heading)}</h2>
       <ul class="closing__names">${C.compliments.names.map((n) => `<li>${n.split(/ (&|and) /).reduce((acc: string[], part, i, all) => (i % 2 === 0 ? [...acc, `<span class="nb">${esc(part)}${all[i + 1] ? ` ${all[i + 1] === '&' ? '&amp;' : 'and'}` : ''}</span>`] : acc), []).join(' ')}</li>`).join('')}</ul>
       ${orn('orn--gold')}
-      <p class="kids__to">${esc(C.kidsNote.to)}</p>
+      ${C.kidsNote.to ? `<p class="kids__to">${esc(C.kidsNote.to)}</p>` : ''}
       <p class="kids__msg">${esc(C.kidsNote.message)}</p>
       <p class="kids__from">— ${esc(C.kidsNote.from)}</p>
     </div>
@@ -510,11 +510,11 @@ const icsDate = (iso: string): string => new Date(iso).toISOString().replace(/[-
 export function renderICS(): string {
   const stamp = icsDate(new Date('2026-10-01T00:00:00Z').toISOString());
   const fold = (s: string) => s.replace(/[,;\\]/g, (m) => '\\' + m);
-  const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Pranshu & Nishtha//Wedding Invitation//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH'];
+  const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Nishtha & Pranshu//Wedding Invitation//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH'];
   for (const e of C.events) {
     lines.push(
       'BEGIN:VEVENT',
-      `UID:${e.id}-2026@pranshu-nishtha-wedding`,
+      `UID:${e.id}-2026@nishtha-pranshu-bride`,
       `DTSTAMP:${stamp}`,
       `DTSTART:${icsDate(e.startISO)}`,
       `SUMMARY:${fold(`${e.name} · ${A} & ${B}`)}`,
